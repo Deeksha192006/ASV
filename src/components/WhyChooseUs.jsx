@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
         scrollTrigger: {
           trigger: '.why-grid',
           start: 'top 85%',
-          toggleActions: 'play none none none'
+          toggleActions: 'play reverse play reverse'
         }
       }
     );
@@ -111,42 +111,42 @@ export default function WhyChooseUs() {
           
           {/* Card 1 */}
           <div className="why-card glass-card">
-            <div className="why-icon"><i className="fa-solid fa-gem gold-gradient-text"></i></div>
+            <div className="why-icon"><i className="fa-solid fa-gem brand-gradient-text"></i></div>
             <h3 className="why-title">20+ Years Expertise</h3>
             <p className="why-desc">A legacy of delivering top-tier commercial developments and asset appreciation.</p>
           </div>
           
           {/* Card 2 */}
           <div className="why-card glass-card">
-            <div className="why-icon"><i className="fa-solid fa-map-location-dot gold-gradient-text"></i></div>
+            <div className="why-icon"><i className="fa-solid fa-map-location-dot brand-gradient-text"></i></div>
             <h3 className="why-title">Prime Business Locations</h3>
             <p className="why-desc">Developments located along Chennai's high-growth corridors for maximum visibility and accessibility.</p>
           </div>
           
           {/* Card 3 */}
           <div className="why-card glass-card">
-            <div className="why-icon"><i className="fa-solid fa-compass-drafting gold-gradient-text"></i></div>
+            <div className="why-icon"><i className="fa-solid fa-compass-drafting brand-gradient-text"></i></div>
             <h3 className="why-title">World-Class Construction</h3>
             <p className="why-desc">Crafted in collaboration with international architects, complying with global standards.</p>
           </div>
           
           {/* Card 4 */}
           <div className="why-card glass-card">
-            <div className="why-icon"><i className="fa-solid fa-shield-check gold-gradient-text"></i></div>
+            <div className="why-icon"><i className="fa-solid fa-shield-check brand-gradient-text"></i></div>
             <h3 className="why-title">Transparency & Trust</h3>
             <p className="why-desc">Uncompromising compliance, clean legal structures, and clear title ownerships.</p>
           </div>
           
           {/* Card 5 */}
           <div className="why-card glass-card">
-            <div className="why-icon"><i className="fa-solid fa-microchip gold-gradient-text"></i></div>
+            <div className="why-icon"><i className="fa-solid fa-microchip brand-gradient-text"></i></div>
             <h3 className="why-title">Future-Ready Infrastructure</h3>
             <p className="why-desc">Premium automation, high-speed fiber backbone, and modern backup utilities.</p>
           </div>
           
           {/* Card 6 */}
           <div className="why-card glass-card">
-            <div className="why-icon"><i className="fa-solid fa-coins gold-gradient-text"></i></div>
+            <div className="why-icon"><i className="fa-solid fa-coins brand-gradient-text"></i></div>
             <h3 className="why-title">Strong Investment Value</h3>
             <p className="why-desc">Grade-A properties constructed to command high rental yields and long-term capital growth.</p>
           </div>

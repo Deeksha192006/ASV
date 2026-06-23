@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Preloader from './components/Preloader';
-import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Metrics from './components/Metrics';
@@ -115,10 +114,18 @@ export default function App() {
               y: 0,
               stagger: staggerDelay,
               duration: 0.25,
-              ease: 'power1.out'
+              ease: 'power1.out',
+              overwrite: 'auto'
             });
           },
-          once: true
+          onLeaveBack: () => {
+            gsap.to(charsToAnimate, {
+              opacity: 0,
+              y: 6,
+              duration: 0.2,
+              overwrite: 'auto'
+            });
+          }
         });
       });
     };
@@ -142,7 +149,7 @@ export default function App() {
             scrollTrigger: {
               trigger: element,
               start: 'top 85%',
-              toggleActions: 'play none none none'
+              toggleActions: 'play reverse play reverse'
             }
           }
         );
@@ -156,6 +163,39 @@ export default function App() {
       ScrollTrigger.refresh();
     }, 100);
 
+    // --- Magnetic Hover Micro-Animations ---
+    const magneticElements = document.querySelectorAll('.btn, .control-btn, .logo, .mobile-menu-toggle');
+    const handleMagneticMove = (e) => {
+      const el = e.currentTarget;
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      gsap.to(el, {
+        x: x * 0.35,
+        y: y * 0.35,
+        duration: 0.3,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    };
+
+    const handleMagneticLeave = (e) => {
+      const el = e.currentTarget;
+      gsap.to(el, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: 'elastic.out(1.1, 0.4)',
+        overwrite: 'auto'
+      });
+    };
+
+    magneticElements.forEach(el => {
+      el.addEventListener('mousemove', handleMagneticMove);
+      el.addEventListener('mouseleave', handleMagneticLeave);
+    });
+
     return () => {
       clearTimeout(timer);
       gsap.ticker.remove(tickerCallback);
@@ -164,13 +204,17 @@ export default function App() {
       if (gridAnim.scrollTrigger) gridAnim.scrollTrigger.kill();
       gridAnim.kill();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      
+      magneticElements.forEach(el => {
+        el.removeEventListener('mousemove', handleMagneticMove);
+        el.removeEventListener('mouseleave', handleMagneticLeave);
+      });
     };
   }, [isLoaded]);
 
   return (
     <>
       <Preloader onComplete={() => setIsLoaded(true)} />
-      <CustomCursor />
       <div className="grid-background"></div>
       
       <Navbar />

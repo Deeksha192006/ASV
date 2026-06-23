@@ -61,7 +61,7 @@ export default function About() {
         scrollTrigger: {
           trigger: '.about-section',
           start: 'top 85%',
-          toggleActions: 'play none none none'
+          toggleActions: 'play reverse play reverse'
         }
       }
     );

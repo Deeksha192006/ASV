@@ -63,7 +63,7 @@ export default function Investment() {
         scrollTrigger: {
           trigger: '.investment-cards-grid',
           start: 'top 85%',
-          toggleActions: 'play none none none'
+          toggleActions: 'play reverse play reverse'
         }
       }
     );

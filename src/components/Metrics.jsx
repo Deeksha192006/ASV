@@ -55,17 +55,26 @@ export default function Metrics() {
           });
 
           if (circleProgress) {
-            gsap.fromTo(circleProgress,
-              { strokeDashoffset: 283 },
-              {
-                strokeDashoffset: 0,
-                duration: 2.2,
-                ease: 'power2.out'
-              }
-            );
+            gsap.to(circleProgress, {
+              strokeDashoffset: 0,
+              duration: 2.2,
+              ease: 'power2.out',
+              overwrite: 'auto'
+            });
           }
         },
-        once: true
+        onLeaveBack: () => {
+          counterObj.count = 0;
+          numberEl.innerText = "0" + suffix;
+          if (circleProgress) {
+            gsap.to(circleProgress, {
+              strokeDashoffset: 283,
+              duration: 0.5,
+              ease: 'power2.out',
+              overwrite: 'auto'
+            });
+          }
+        }
       });
 
       // 3D tilt effect on metrics cards
@@ -124,7 +133,7 @@ export default function Metrics() {
                 <circle className="circle-bg" cx="50" cy="50" r="45"></circle>
                 <circle className="circle-progress" cx="50" cy="50" r="45"></circle>
               </svg>
-              <i className="fa-solid fa-award gold-gradient-text"></i>
+              <i className="fa-solid fa-award brand-gradient-text"></i>
             </div>
             <div className="metric-number" data-target="20">0</div>
             <div className="metric-label">Years of Excellence</div>
@@ -136,7 +145,7 @@ export default function Metrics() {
                 <circle className="circle-bg" cx="50" cy="50" r="45"></circle>
                 <circle className="circle-progress" cx="50" cy="50" r="45"></circle>
               </svg>
-              <i className="fa-solid fa-shapes gold-gradient-text"></i>
+              <i className="fa-solid fa-shapes brand-gradient-text"></i>
             </div>
             <div className="metric-number" data-target="3">0</div>
             <div className="metric-label">M+ Sq.Ft Delivered</div>
@@ -148,7 +157,7 @@ export default function Metrics() {
                 <circle className="circle-bg" cx="50" cy="50" r="45"></circle>
                 <circle className="circle-progress" cx="50" cy="50" r="45"></circle>
               </svg>
-              <i className="fa-solid fa-handshake gold-gradient-text"></i>
+              <i className="fa-solid fa-handshake brand-gradient-text"></i>
             </div>
             <div className="metric-number" data-target="100">0</div>
             <div className="metric-label">Corporate Clients</div>
@@ -160,7 +169,7 @@ export default function Metrics() {
                 <circle className="circle-bg" cx="50" cy="50" r="45"></circle>
                 <circle className="circle-progress" cx="50" cy="50" r="45"></circle>
               </svg>
-              <i className="fa-solid fa-face-smile gold-gradient-text"></i>
+              <i className="fa-solid fa-face-smile brand-gradient-text"></i>
             </div>
             <div className="metric-number" data-target="100">0</div>
             <div className="metric-label">Client Satisfaction %</div>

@@ -122,7 +122,7 @@ export default function Hero() {
           <span className="hero-label fade-up">CHENNAI'S PREMIER REAL ESTATE GROUP</span>
           <h1 className="hero-title">
             <span className="hero-title-part fade-up">Building Tomorrow's</span>{' '}
-            <span className="gold-gradient-text" id="typed-text">{typedText}</span>
+            <span className="brand-gradient-text" id="typed-text">{typedText}</span>
             <span className="typing-cursor">|</span><br />
             <span className="hero-title-part fade-up">Creating Spaces That Inspire Growth.</span>
           </h1>
@@ -141,7 +141,7 @@ export default function Hero() {
             <div className="light-beam"></div>
             
             <div className="floating-card card-1 glass-card">
-              <div className="card-icon"><i className="fa-solid fa-building-circle-check gold-text"></i></div>
+              <div className="card-icon"><i className="fa-solid fa-building-circle-check brand-text"></i></div>
               <div>
                 <div className="card-title">Grade-A Space</div>
                 <div className="card-desc">Leed Certified</div>
@@ -149,7 +149,7 @@ export default function Hero() {
             </div>
             
             <div className="floating-card card-2 glass-card">
-              <div className="card-icon"><i className="fa-solid fa-location-dot gold-text"></i></div>
+              <div className="card-icon"><i className="fa-solid fa-location-dot brand-text"></i></div>
               <div>
                 <div className="card-title">Prime Locations</div>
                 <div className="card-desc">OMR & CBD Chennai</div>
@@ -157,7 +157,7 @@ export default function Hero() {
             </div>
 
             <div className="floating-card card-3 glass-card">
-              <div className="card-icon"><i className="fa-solid fa-chart-line gold-text"></i></div>
+              <div className="card-icon"><i className="fa-solid fa-chart-line brand-text"></i></div>
               <div>
                 <div className="card-title">HNI Investment</div>
                 <div className="card-desc">High ROI Yield</div>
